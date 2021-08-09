@@ -1,0 +1,1126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Lab04: GroupC6 </title>
+  <!-- metadata -->
+  <meta name="generator" content="S5" />
+  <meta name="version" content="S5 1.1" />
+  <meta name="presdate" content="20121001" />
+  <meta name="author" content="Syed Zohaib Raza" />
+  <meta name="company" content="Kempten University of Applied Science" />
+  <!-- configuration parameters -->
+  <meta name="defaultView" content="outline" />
+  <meta name="controlVis" content="hidden" />
+  <!-- style sheet links -->
+  <link rel="stylesheet" type="text/css" href="../../css/style.css" media="all" />
+  <link rel="stylesheet" href="../../ui/default/slides.css" type="text/css" media="projection" id="slideProj" />
+  <link rel="stylesheet" href="../../ui/default/outline.css" type="text/css" media="screen" id="outlineStyle" />
+  <link rel="stylesheet" href="../../ui/default/print.css" type="text/css" media="print" id="slidePrint" />
+  <link rel="stylesheet" href="../../ui/default/opera.css" type="text/css" media="projection" id="operaFix" />
+  <!-- embedded styles -->
+  <style type="text/css" media="all">
+    .imgcon {
+      width: 525px;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+    }
+
+    #anim {
+      width: 270px;
+      height: 320px;
+      position: relative;
+      margin-top: 0.5em;
+    }
+
+    #anim img {
+      position: absolute;
+      top: 42px;
+      left: 24px;
+    }
+
+    img#me01 {
+      top: 0;
+      left: 0;
+    }
+
+    img#me02 {
+      left: 23px;
+    }
+
+    img#me04 {
+      top: 44px;
+    }
+
+    img#me05 {
+      top: 43px;
+      left: 36px;
+    }
+  </style>
+  <!-- Prettify Google -->
+  <link href="../../google-code-prettify/src/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../../google-code-prettify/src/prettify.js"></script>
+  <script type="text/javascript" src="../../google-code-prettify/src/lang-vhdl.js"></script>
+  <!-- Chart -->
+  <SCRIPT SRC="../../Chart_2013_03_11/Chart_basic.js"></SCRIPT>
+  <!-- LTSPICE -->
+  <SCRIPT SRC="../../SPICE_HTML_2018_02/LTSPICE.js"></SCRIPT>
+  <!-- S5 JS -->
+  <script src="../../ui/default/slides.js" type="text/javascript"></script>
+  <!-- QR Code -->
+  <script src="../../QRCode/jsqr-1.0.2.js" type="text/javascript"></script>
+  <!-- JQuery -->
+  <SCRIPT SRC="../../scripts/jquery.js"> </SCRIPT>
+  <!-- MathJax -->
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+    tex2jax: {inlineMath: [["$$","$$"],["\\(","\\)"]]}
+  });
+</script>
+  <script type="text/javascript" src="../../MathJax/MathJax.js"></script>
+
+</head>
+
+<body>
+
+  <div id="headx" style="display:block">
+    <div id="nheader1" style="background-color:#0067a5;color:#FFFFFF" align="right">
+      <a href="http://www.hochschule-kempten.de" style="color:#FFFFFF"> Hochschule Kempten &nbsp; &nbsp; &nbsp; </a>
+    </div>
+    <div id="nheader2" style="background-color:#05adb5;color:#FFFFFF" align="right">
+      <a href="https://www.hs-kempten.de/fakultaet-elektrotechnik/" style="color:#FFFFFF">
+        Fakultät Elektrotechnik &nbsp; &nbsp; &nbsp;
+    </div>
+    <div id="nheader3" style="background-color:#f18700;color:#FFFFFF" align="right">
+      <a href="../../InEl/Vollrath_InEl.html" style="background-color:#f18700;color:#FFFFFF">
+        Interface Electronics &nbsp; &nbsp; &nbsp;</a>
+      <a href="https://www.hs-kempten.de/elektrotechnik/fakultaet/personen-detailansicht/joerg-vollrath?tx_hisconnect_personenlisting%5Bbacklink%5D=607&cHash=effe2c6873f6c8a9f79b55b636d3bde2"
+        style="background-color:#f18700;color:#FFFFFF">
+        Fachgebiet Elektronik, Prof. Vollrath &nbsp; &nbsp; &nbsp;</a>
+    </div>
+  </div>
+
+  <div class="layout">
+    <div id="controls">
+      <!-- DO NOT EDIT -->
+    </div>
+    <div id="currentSlide">
+      <!-- DO NOT EDIT -->
+    </div>
+    <div id="header"></div>
+    <div id="footer">
+      <hr>
+      <h1>2020 12 01 Interface Electronics Web report GroupC6 </h1>
+    </div>
+  </div>
+
+  <div class="presentation">
+
+    <!----------------------------------------- Next slide -------------------------------->
+    <div class="slide">
+      <table>
+        <tr>
+          <td>
+            <h1>Interface Electronics</h1>
+            <h1>Laboratory 04 </h1>
+            <h3>GroupC6, ***995, R </h3>
+            <h1>Investigation of ADC and DAC in Arduino Environment</h1>
+          </td>
+          <td>
+            <canvas id="thisQR"></canvas>
+          </td>
+        </tr>
+      </table>
+      <br>
+      <br>
+      <div class="handout">
+        <!-- hand out -->
+      </div>
+    </div>
+	
+	
+	
+	<!----------------------------------------- Next slide -------------------------------->
+	  
+	  
+	  <div class="slide">
+      <h1>Overview</h1>
+      <ul>
+        <li>Abstract</li>
+        <li>Introduction</li>
+        <li>Setting Up Arduino Environment</li>
+        <li>DAC Characterization</li>
+        <li>ADC Characterization</li>
+		<li>Optimization of Arduino Code</li>
+        <li>Challenges</li>
+        <li>Summary and Conclusions</li>
+        <li>References</li>
+      </ul>
+	
+
+    <!----------------------------------------- Next slide -------------------------------->
+    <div class="slide">
+      <h1>Abstract</h1>
+	  <table>
+	  <tr>
+	  <td style = "width:50%">
+	  <ul>
+      <p style="text-align:justify; color:black;">
+	 <br></br>
+	  
+	  
+	  In this laboratory, we are going to characterize the Analog to Digital Converters (ADCs) and Digital to Analog Converters (DACs) in an Arduino environment.
+			For the characterization, the number of the bits of the measuring device should be greater than the number of bits of  device under test (DUT). For DAC characterization, we are using the 
+				the 12 bit external PMOD ADC as a measurirng device with 8 bit (external R2R DAC) and 10 bit (Arduino DAC) as the DUTs. Similarly, for the ADC Characterization, we are 
+					using the external PMOD DAC (12 bit) and the device under test is Arduino ADC (10 bit). Investigation and comparison of different converter parameters such as INL, DNL, Offset Error, Gain Error, SQNR, Resolution etc are also done.
+						By using the Arduino, we controlled the R2R DAC, PMOD DAC and PMOD ADC. The measurements of External converters and Internal converters are compared to investigate their performances.</li>
+				
+	  
+	  </p>
+	  </ul>
+	  
+	  </td>
+	  
+	  <td>
+	  </td>
+	  </tr>
+	  </table>
+	  
+	  
+	  
+       
+      </ul>
+	  
+	  
+	  
+	  <!----------------------------------------- Next slide -------------------------------->
+	  
+	  
+	  <div class="slide">
+      <h1>Introduction</h1>
+      <ul>
+        
+      
+	  
+	  <table >
+	  <tr>
+	  <td style = "width:50%">
+	  
+	   <p style="text-align:justify;">
+	  
+	  <li><p style="text-align:justify; color:black;">As already described in the objective section, the aim of our laboratory is to characterize the ADCs and DACs in the Arduino environment.</p></li>
+			<li><p style="text-align:justify; color:black;">For the DAC characterization, we are using the Arduino and R2R DACs with PMOD ADC. In this case the device under test is our DACs and we are using the higher order 
+				ADC to characterize our Digital to Analog Converters.</p></li> <li><p style="text-align:justify; color:black;">For the ADC characterization, we are using the external 12 bits PMOD DAC and the Arduino ADC. The device under test 
+					is Arduino ADC.</p></li><li><p style="text-align:justify; color:black;">A number of different converter parameters are used to investigate and compare the internal and external converters. 
+						The following table shows the combinations which we are going to investigate in this lab.</p></li>
+				
+
+		
+		<li> <p style="text-align:justify; color:black;">For DACs, the Integral Non-linearity (INL) helps to measure the deviation between the actual output value and the ideal output value.
+			We can calculate it by summing all the DNLs of the previous transitions. For ADCs, it is a deviation between the threshold values of the 
+				ideal input and certain output code. </p></li>
+				
+		<li> <p style="text-align:justify; color:black;">Differential Non-Linearity (DNL) helps to measure the deviation between two Analog Values corresponding to digital inputs which are adjacent as well.
+				It is usually measured in LSBs.</p></li>
+				
+		<li><p style="text-align:justify; color:black;"> Besides INL/DNL, there are many other parameters that helps us to compare the given converters. We did the Spectral Analsysis by doing DFT (Discrete Fourier Transform) through FFT. 
+				The frequency spectrum helps us to identify the number of periods as well as the SQNR of our signal which ultimately helps to find the ENOB. </p></li>
+				
+		<li> <p style="text-align:justify; color:black;">By changing the number of periods, one can observe deviation from the true periodicity known as jitter which is most of the time in relation with reference clock signal.</p></li>
+			
+		
+		</p>
+			
+		</td>
+		
+		<td>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+		</td>
+		
+		<td>
+		</ul>
+  <ul>
+      <h3>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbspInvestigated Combinations </h3>
+     
+	  
+      <!-- TABLE -->
+    
+        <table border=1>
+          <tr>
+            <th style="text-align:center" width="125">Combination</th>
+            <th style="text-align:center" width="125">DAC</th>
+            <th style="text-align:center" width="125">ADC</th>
+          </tr>
+          <tr>
+            <td style="text-align:center">1</td>
+            <td style="text-align:center"> Arduino (10 bits)</td>
+            <td style="text-align:center"> PMOD (12 bits) </td>
+          </tr>
+          <tr>
+            <td style="text-align:center">2</td>
+            <td style="text-align:center"> R2R (8 bits) </td>
+            <td style="text-align:center"> PMOD (12 bits) </td>
+          </tr>
+          <tr>
+            <td style="text-align:center">3</td>
+            <td style="text-align:center"> PMOD (12 bits) </td>
+            <td style="text-align:center"> Arduino (10 bits) </td>
+			
+          </tr>
+        </table>
+		
+		
+		
+      </ul>
+	  </td>
+	  </tr>
+	  </table>
+	  </div>
+
+			
+			
+      <!----------------------------------------- Next slide -------------------------------->
+
+ <div class="slide">
+ 
+	
+      <h1>Setting Up Arduino Environment</h1>
+	  <table>
+	<tr>
+	<td style = "width:50%">
+      <ul>
+        <li><p style="text-align:justify; color:black;">The controller used in this laboratory is Arduino MKR Wifi 1010.</p></li>
+		
+		<li><p style="text-align:justify; color:black;">The Arduino MKR Wifi 1010 has a circuit operating voltage of 3.3V and board power supply requirement is 5V.</p></li>
+		
+		<li><p style="text-align:justify; color:black;">The controller has 8 Digital I/O pins, 13 PWM pins, 7 analog input pins and 1 analog output pin (DAC 10 bit).</p></li>
+		
+        <li><p style="text-align:justify; color:black;">After installing the Arduino IDE, I checked the status whether it was working or not by running a code for Blinking LED.</p></li>
+		
+        <li><p style="text-align:justify; color:black;">After that, I patched an external R2R circuit and by burning the given 256 values Sine code (First sketch) to Arduino, I observed the output of my R2R. </p></li>
+		
+		<li><p style="text-align:justify; color:black;"> The output was observed using the 'Waverform' software tool and I got my required Sine wave as expected.</p></li>
+		
+        <li><p style="text-align:justify; color:black;">We can also observe the output by using the internal feature of Arduino, which is Serial Monitor and Serial Plotter.</p></li>
+		
+        <li><p style="text-align:justify; color:black;">By using the data from the Serial Monitor of Arduino, we can do the investigations (Sine and Ramp tests) on those data using the Online Tools provided on the webpage of this course and Microsoft Excel as well.</p></li>
+     
+		<li><p style="text-align:justify; color:black;">In the adjacent figure, the complete Arduino setup has been shown which includes all the external
+				 and internal converters under consideration.</p></li>
+	 
+	 </ul>
+	  </td>
+	  
+	  
+	  <td style = "width:5%">
+	  </td>
+
+	  <td>
+	  <img  src="Images/Bread_Board.png" width="350" height="200" alt="">
+	  </td>
+
+	  
+	  
+	  </tr>
+	  </table>
+	  
+      <div class="handout">
+        <!-- hand out -->
+      </div>
+    </div>
+
+   
+
+
+
+<!----------------------------------------- Next slide -------------------------------->
+    <div class="slide">
+     <h1>Results of DAC Characterization (Arduino DAC & R2R DAC with PMOD ADC)</h1> 
+	 
+	 
+
+      <!DOCTYPE html>
+      <html>
+
+      <head>
+        <style>
+          .button {
+            background-color: #2874A6;
+            border: none;
+            color: white;
+            padding: 5px 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 6px 2px;
+            cursor: default;
+          }
+        </style>
+      </head>
+
+
+
+
+
+<div> 
+<table>
+<tr>
+
+
+
+
+
+<td style="width:50%">
+
+
+
+<h2 style="text-align:center">Arduino DAC</h2>
+
+<br></br>
+
+
+    <form autocomplete="off">
+          <input type="button" class="button image-btn" data-image-tag-id="one" data-image-source-id="Images/INL_Ramp_C1.jpg" value="INL_Ramp">
+          <input type="button" class="button image-btn" data-image-tag-id="one" data-image-source-id="Images/Time Data_Ramp_C1.jpg" value="Time Data_Ramp">
+		  <input type="button" class="button image-btn" data-image-tag-id="one" data-image-source-id="Images/INL_Sine1_C1.jpg" value="INL_Sine (1 Period)">
+          <input type="button" class="button image-btn" data-image-tag-id="one" data-image-source-id="images/FFT_Sine1_C1.jpg" value="FFT_Sine (1 Period)">
+          <input type="button" class="button image-btn" data-image-tag-id="one" data-image-source-id="Images/INL_Sine2_C1.jpg" value="INL_SINE (11 Periods)">
+          <input type="button" class="button image-btn" data-image-tag-id="one" data-image-source-id="Images/FFT_Sine2_C1.jpg" value="FFT_Sine (11 Periods) ">
+        </form>
+
+        <img id="one" src="Images/INL_Ramp_C1.jpg" width="400" height="250" alt="">
+		</td>
+		<br></br>
+      
+<td>
+
+
+
+
+<h2 style="text-align:center">R2R DAC</h2>
+
+<br></br>
+
+	<form autocomplete="off">
+          <input type="button" class="button image-btn" data-image-tag-id="two" data-image-source-id="Images/INL_Ramp_C2.jpg" value="INL_Ramp">
+          <input type="button" class="button image-btn" data-image-tag-id="two" data-image-source-id="Images/Time Data_Ramp_C2.jpg" value="Time Data_Ramp">
+		  <input type="button" class="button image-btn" data-image-tag-id="two" data-image-source-id="Images/INL_Sine1_C2.jpg" value="INL_Sine (1 Period)">
+          <input type="button" class="button image-btn" data-image-tag-id="two" data-image-source-id="images/FFT_Sine1_C2.jpg" value="FFT_Sine (1 Period)">
+          <input type="button" class="button image-btn" data-image-tag-id="two" data-image-source-id="Images/INL_Sine2_C2.jpg" value="INL_SINE (11 Periods)">
+          <input type="button" class="button image-btn" data-image-tag-id="two" data-image-source-id="Images/FFT_Sine2_C2.jpg" value="FFT_Sine (11 Periods)">
+        </form>
+
+        <img id="two" src="Images/INL_Ramp_C2.jpg" width="400" height="250" alt="">
+		<br></br>
+		</td>
+
+        
+</tr>
+</table> 
+		
+		
+        <script>
+          $('input.image-btn').click(function() {
+            const imageTagId = $(this).data('image-tag-id');
+            const imageSource = $(this).data('image-source-id');
+
+            $('#' + imageTagId).attr('src', imageSource);
+          })
+        </script>
+    
+
+
+
+<table>
+<tr>
+	 <td>
+								
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+		</td> 
+	   
+	
+	<td style="width:45%">
+	
+	
+
+
+<table border=2>
+
+
+  
+
+
+		<thead>    
+	  <tr height="25" class="Bold">
+			     <th style="text-align:center" colspan="3"> DAC Ramp Test</th>     
+		</tr>
+		</thead>
+		
+		  <tr class="Bold">		
+				<th height="25" width="150px" style="text-align:center">&nbspParameter</th>   <th width="125">&nbspArduino DAC &nbsp</th>   <th width="125">&nbspR2R DAC &nbsp</th>             
+			</tr> 
+		
+         <tr>		
+					<td height="25" style="text-align:center">&nbspINL,DNL</td> 						 <td style="text-align:center">&nbsp-0.21 LSB</td>          <td style="text-align:center">&nbsp-1.02 LSB</td>		     								                 
+			</tr> 
+	  
+          <tr>
+					<td height="25" style="text-align:center">&nbspOffset Error</td>  				 <td style="text-align:center">&nbsp5</td>                  <td style="text-align:center">&nbsp1</td> 	     								             
+			</tr>
+		  
+          <tr>
+					<td height="25" style="text-align:center">&nbspGain Error</td>  					 <td style="text-align:center">&nbsp15</td>                 <td style="text-align:center">&nbsp15</td> 		         										          
+			</tr>
+  
+		  <tr>		  
+					<td height="25" style="text-align:center">&nbspMaximum Value</td> 						<td style="text-align:center">&nbsp4081</td>            <td style="text-align:center">&nbsp4081</td>                      
+			</tr>
+		  
+		   <tr>		  
+					<td height="25" style="text-align:center">&nbspMinimum Value</td> 				<td style="text-align:center">&nbsp 5</td>           <td style="text-align:center">&nbsp 0</td>                    
+			</tr>
+			
+			<tr>		  
+					<td height="25" style="text-align:center">&nbspDAC LSB</td> 				<td style="text-align:center">&nbsp 3.226 mV</td>           <td style="text-align:center">&nbsp 12.89 mV</td>                    
+			</tr>
+			
+			<tr>		  
+					<td height="25" style="text-align:center">&nbspDAC Resolution</td> 				<td style="text-align:center">&nbsp 10 bits</td>           <td style="text-align:center">&nbsp 8 bits</td>                    
+			</tr>
+
+</table>
+		</td>
+
+<td style="width:3%">
+</td>
+
+		
+		<td style="width:45%">
+
+
+		
+	<table border=2>
+		<thead>    
+	  <tr height="25">
+			     <th style="text-align:center" colspan="5"> DAC Sine Test</th>     
+		</tr>
+		</thead>
+		<thead>    
+	  <tr height="25">
+			     <th style="text-align:center" colspan="1"> Signal</th>  <th style="text-align:center" colspan="2">Sine 1 Period</th>    
+					<th style="text-align:center" colspan="2">Sine 11 Periods</th> 
+		</tr>
+		</thead>
+		  <tr>		
+				<th height="25" width="100px" style="text-align:center">&nbspParameter</th>   <th width="90" style="text-align:center">&nbspArduino DAC &nbsp</th>   <th width="90" style="text-align:center">&nbspR2R DAC &nbsp</th>    <th width="90" style="text-align:center">&nbspArduino DAC&nbsp</th>   <th width="90" style="text-align:center">&nbspR2R DAC  &nbsp</th>          
+			</tr> 
+		
+         <tr>		
+					<td height="25" style="text-align:center">&nbspINL,DNL</td> 					     <td style="text-align:center">&nbsp-0.21 LSB</td>                     <td style="text-align:center">&nbsp0.26 LSB</td>	<td style="text-align:center">&nbsp-0.20 LSB</td>	 <td style="text-align:center">&nbsp-0.40 LSB</td>       					                 
+			</tr> 
+			
+			
+			<tr>		
+					<td height="25" style="text-align:center">&nbspSQNR</td> 					     <td style="text-align:center">&nbsp49.63 dB</td>                     <td style="text-align:center">&nbsp48.31 dB</td>		<td style="text-align:center">&nbsp49.63 dB</td>    <td style="text-align:center">&nbsp48.33 dB</td>       					                 
+			</tr> 
+			
+			<tr>		
+					<td height="25" style="text-align:center">&nbspENOB (From table)</td> 					     <td style="text-align:center">&nbsp7.9 bits</td>                    <td style="text-align:center">&nbsp7.7 bits</td>	<td style="text-align:center">&nbsp7.9 bits</td> 	 <td style="text-align:center">&nbsp7.7 bits</td>       					                 
+			</tr> 
+	  
+			<tr>		
+					<td height="25" style="text-align:center">&nbspMaximum Value</td> 					     <td style="text-align:center">&nbsp4081</td>          <td style="text-align:center">&nbsp4082</td>           <td style="text-align:center">&nbsp4082</td>		 <td style="text-align:center">&nbsp4081</td>       					                 
+			</tr> 
+			
+			
+			<tr>		
+					<td height="25" style="text-align:center">&nbspMinimum Value</td> 					     <td style="text-align:center">&nbsp4</td>          <td style="text-align:center">&nbsp0</td>           <td style="text-align:center">&nbsp4</td>		 <td style="text-align:center">&nbsp0</td>       					                 
+			</tr> 
+			
+			
+			
+			<tr>		
+					<td height="25" style="text-align:center">&nbspENOB (INL,DNL<0.5 LSB)</td> 					     <td style="text-align:center">&nbsp8 bits</td>          <td style="text-align:center">&nbsp6 bits</td>           <td style="text-align:center">&nbsp8 bits</td>		 <td style="text-align:center">&nbsp6 bits</td>       					                 
+			</tr> 
+			
+			
+			</table>
+			
+			
+			</td>
+			
+		</tr>
+
+
+</table>
+
+
+
+
+
+     </div>
+
+
+<!----------------------------------------- Next slide -------------------------------->
+	  
+	  
+	  <div class="slide" >
+	  
+	  <h1 >Interpretation of Results of DAC Characterization </h1>
+	  <table style="width:50%">
+	  <tr>
+	  <td>
+      
+      <ul>
+        <li><p style="text-align:justify; color:black;">The results of both tests (Sine and Ramp) for DAC characterization can be found in the previous slide. All these results have been gathered using
+			the third arduino sketch provided to us.</p></li>
+			
+        <li><p style="text-align:justify; color:black;">For the Ramp Test, the results that are taken from the javascript tool has been shown. In the tool, we supposed the number of occurences 
+			which is four in my case. I did the ramp test using microsoft excel as well in order to find the  real occurences. The results were almost the 
+				same and matches with results that were taken from the tool.</p></li>
+				
+        <li><p style="text-align:justify; color:black;">For Ramp Test, the INL/DNL value for the R2R DAC is -1.02 LSB which is  much greater than INL/DNL value of -0.21 LSB for Arduino DAC. 
+			The main reason behind this difference is the lower number of bits of R2R DAC. Other reason is that the R2R DAC is not available in a compact form like the 
+				Arduino DAC.</p></li>
+				
+        <li><p style="text-align:justify; color:black;">Both of the DACs have the same Gain errors and different LSBs due to the difference in resolution.
+				The Offset errors are a bit different and they have been calculated by observing the starting code value which should be zero ideally.</p></li>
+        
+		<li><p style="text-align:justify; color:black;">For the Sine Test, I used the FFT tool because I was not able to calculate the INL, DNL using the excel sheet because of the difficulties in compensating the 
+				offset and grid error and getting an ideal curve. 
+				</p></li>
+		
+		<li><p style="text-align:justify; color:black;">The FFT and the INL, DNL graphs are taken for two different periods (1 and 11). From the FFT spectrum, I identified the
+				number of periods and it also helped to find the SQNR. The noise and INL,DNL is less for the arduiono DAC as compared
+				to R2R DAC.</p></li>
+				
+		<li><p style="text-align:justify; color:black;">There is no difference between the SQNR for different periods for both the DACs. The reason behind this is the absence of Jitter in the 
+				third sketch of arduino, as this is not a real time data.</p></li>
+				
+				
+		<li><p style="text-align:justify; color:black;">The jitter was observed when I used the 256 value code (second arduino script) and there was a difference betweeen the SQNR for different 
+			periods.</p></li>
+
+		<li><p style="text-align:justify; color:black;"> I got the values of INL and DNL less than 0.5 LSB by reducing the number of bits for both periods. For R2R, the bits are 6 for which I got my INL, DNL	
+				less than 0.5 LSB and for Arduino it is 8 bits. The missing codes came to 0 for 9 bits in case of arduino DAC but INL, DNL value 
+					 was not in the required limits of 0.5 LSB.</p></li>
+		
+		<li><p style="text-align:justify; color:black;">By changing the number of bits in the FFT tool, the SQNR and ENOB did not change in both cases. It should have been changed because by 
+				decreasing the bits, we are reducing the number of codes for FFT. Here in the table, the SQNR and ENOB corresponds to the bits which are taken 
+					from the table of the tool.</p></li>
+					
+		<li><p style="text-align:justify; color:black;">We used the Integer number of periods for FFT in order to reduce the discontinuities in our spectrum. Our number of periods are also			
+				Prime number because it helps to reduce the computational time in DFT computation.</p> </li>
+				
+				
+        
+      </ul>
+	  </td>
+	  </tr>
+	  </table>
+
+</div>
+<!----------------------------------------- Next slide -------------------------------->
+    <div class="slide">
+     <h1>Results of ADC Characterization (PMOD DAC and Arduino ADC)</h1> 
+	 
+	 
+
+      <!DOCTYPE html>
+      <html>
+
+      <head>
+        <style>
+          .button {
+  transition-duration: 0.4s;
+  background-color: #2874A6;
+  border-radius: 0px;
+  padding: 5px 5px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #3498DB; /* Green */
+  color: white;
+}
+} 
+		  
+        </style>
+      </head>
+	
+
+
+
+<table>
+
+	
+	<td style="width:50%">
+	
+       
+
+
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+      <div class="handout">
+        <!-- hand out -->
+      </div>
+    </div>
+	
+	<div> 
+
+
+
+
+
+
+
+<div> 
+<table>
+<tr><td style="width:50%">
+
+<h2 style="text-align:center">OSC2 ADC</h2>
+
+<br></br>
+
+    <form autocomplete="off">
+          <input type="button" class="button image-btn" data-image-tag-id="three" data-image-source-id="Images/INL_Ramp_C3_OSC2.jpg" value="INL_Ramp">
+          <input type="button" class="button image-btn" data-image-tag-id="three" data-image-source-id="Images/Time Data_Ramp_C3_OSC2.jpg" value="Time Data_Ramp">
+		  <input type="button" class="button image-btn" data-image-tag-id="three" data-image-source-id="Images/INL_Sine1_C3_OSC2.jpg" value="INL_Sine (1 Period)">
+          <input type="button" class="button image-btn" data-image-tag-id="three" data-image-source-id="images/FFT_Sine1_C3_OSC2.jpg" value="FFT_Sine (1 Period)">
+          <input type="button" class="button image-btn" data-image-tag-id="three" data-image-source-id="Images/INL_Sine2_C3_OSC2.jpg" value="INL_SINE (11 Periods)">
+          <input type="button" class="button image-btn" data-image-tag-id="three" data-image-source-id="Images/FFT_Sine2_C3_OSC2.jpg" value="FFT_Sine (11 Periods) ">
+        </form>
+
+        <img id="three" src="Images/INL_Ramp_C3_OSC2.jpg" width="400" height="250" alt="">
+		<br></br>
+		</td>
+      
+</td><td>
+
+<h2 style="text-align:center">OSC4 ADC</h2>
+
+<br></br>
+
+	<form autocomplete="off">
+          <input type="button" class="button image-btn" data-image-tag-id="four" data-image-source-id="Images/INL_Ramp_C3_OSC4.jpg" value="INL_Ramp">
+          <input type="button" class="button image-btn" data-image-tag-id="four" data-image-source-id="Images/Time Data_Ramp_C3_OSC4.jpg" value="Time Data_Ramp">
+		  <input type="button" class="button image-btn" data-image-tag-id="four" data-image-source-id="Images/INL_Sine1_C3_OSC4.jpg" value="INL_Sine (1 Period)">
+          <input type="button" class="button image-btn" data-image-tag-id="four" data-image-source-id="images/FFT_Sine1_C3_OSC4.jpg" value="FFT_Sine (1 Period)">
+          <input type="button" class="button image-btn" data-image-tag-id="four" data-image-source-id="Images/INL_Sine2_C3_OSC4.jpg" value="INL_SINE (11 Periods)">
+          <input type="button" class="button image-btn" data-image-tag-id="four" data-image-source-id="Images/FFT_Sine2_C3_OSC4.jpg" value="FFT_Sine (11 Periods)">
+        </form>
+
+        <img id="four" src="Images/INL_Ramp_C3_OSC4.jpg" width="400" height="250" alt="">
+		<br></br>
+		</td>
+
+        
+</tr>
+</table> 
+		
+		
+        <script>
+          $('input.image-btn').click(function() {
+            const imageTagId = $(this).data('image-tag-id');
+            const imageSource = $(this).data('image-source-id');
+
+            $('#' + imageTagId).attr('src', imageSource);
+          })
+        </script>
+    
+
+
+<table>
+<tr>
+	 <td>
+								
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+
+		</td> 
+	   
+	
+	<td style="width:45%">
+	
+	
+
+
+<table border=2>
+
+
+  
+
+
+		<thead>    
+	  <tr height="25" class="Bold">
+			     <th style="text-align:center" colspan="3"> ADC Ramp Test</th>     
+		</tr>
+		</thead>
+		
+		  <tr class="Bold">		
+				<th height="25" width="150px" style="text-align:center">&nbspParameter</th>   <th width="125">&nbspOSC2 &nbsp</th>   <th width="125">&nbspOSC4&nbsp</th>             
+			</tr> 
+		
+         <tr>		
+					<td height="25" style="text-align:center">&nbspINL,DNL</td> 						 <td style="text-align:center">&nbsp-0.43 LSB</td>          <td style="text-align:center">&nbsp-0.44 LSB</td>		     								                 
+			</tr> 
+	  
+          <tr>
+					<td height="25" style="text-align:center">&nbspOffset Error</td>  				 <td style="text-align:center">&nbsp2</td>                  <td style="text-align:center">&nbsp2</td> 	     								             
+			</tr>
+		  
+          <tr>
+					<td height="25" style="text-align:center">&nbspGain Error</td>  					 <td style="text-align:center">&nbsp2</td>                 <td style="text-align:center">&nbsp3</td> 		         										          
+			</tr>
+  
+		  <tr>		  
+					<td height="25" style="text-align:center">&nbspMaximum Value</td> 						<td style="text-align:center">&nbsp1022</td>            <td style="text-align:center">&nbsp1021</td>                      
+			</tr>
+		  
+		   <tr>		  
+					<td height="25" style="text-align:center">&nbspMinimum Value</td> 				<td style="text-align:center">&nbsp2</td>           <td style="text-align:center">&nbsp2</td>                    
+			</tr>
+			
+			<tr>		  
+					<td height="25" style="text-align:center">&nbspADC LSB</td> 				<td style="text-align:center">&nbsp3.226 mV</td>           <td style="text-align:center">&nbsp3.226 mV</td>                    
+			</tr>
+			
+			<tr>		  
+					<td height="25" style="text-align:center">&nbspADC Resolution</td> 				<td style="text-align:center">&nbsp 10 bits</td>           <td style="text-align:center">&nbsp 10 bits</td>                    
+			</tr>
+
+</table>
+		</td>
+
+<td style="width:3%">
+</td>
+
+		
+		<td style="width:45%">
+
+
+		
+	<table border=2>
+		<thead>    
+	  <tr height="25">
+			     <th style="text-align:center" colspan="5"> ADC Sine Test</th>     
+		</tr>
+		</thead>
+		<thead>    
+	  <tr height="25">
+			     <th style="text-align:center" colspan="1"> Signal</th>  <th style="text-align:center" colspan="2">Sine 1 Period</th>    
+					<th style="text-align:center" colspan="2">Sine 11 Periods</th> 
+		</tr>
+		</thead>
+		  <tr>		
+				<th height="25" width="100px" style="text-align:center">&nbspParameter</th>   <th width="90" style="text-align:center">&nbspOSC2&nbsp</th>   <th width="90" style="text-align:center">&nbspOSC4&nbsp</th>    <th width="90" style="text-align:center">&nbspOSC2&nbsp</th>   <th width="90" style="text-align:center">&nbspOSC4&nbsp</th>          
+			</tr> 
+		
+         <tr>		
+					<td height="25" style="text-align:center">&nbspINL,DNL</td> 					     <td style="text-align:center">&nbsp0.46 LSB</td>          <td style="text-align:center">&nbsp0.43 LSB</td>           <td style="text-align:center">&nbsp-0.24 LSB</td>		 <td style="text-align:center">&nbsp-0.24 LSB</td>       					                 
+			</tr> 
+			
+		
+			<tr>		
+					<td height="25" style="text-align:center">&nbspSQNR</td> 					     <td style="text-align:center">&nbsp54.63 dB</td>          <td style="text-align:center">&nbsp54.60 dB</td>           <td style="text-align:center">&nbsp54.60 dB</td>		 <td style="text-align:center">&nbsp54.62 dB</td>       					                 
+			</tr> 
+			
+			<tr>		
+					<td height="25" style="text-align:center">&nbspENOB (From table)</td> 					     <td style="text-align:center">&nbsp8.8</td>          <td style="text-align:center">&nbsp8.8</td>           <td style="text-align:center">&nbsp8.8</td>		 <td style="text-align:center">&nbsp8.8</td>       					                 
+			</tr> 
+	  
+			<tr>		
+					<td height="25" style="text-align:center">&nbspMaximum Value</td> 					     <td style="text-align:center">&nbsp1021</td>          <td style="text-align:center">&nbsp1021</td>           <td style="text-align:center">&nbsp1022</td>		 <td style="text-align:center">&nbsp1021</td>       					                 
+			</tr> 
+			
+			
+			<tr>		
+					<td height="25" style="text-align:center">&nbspMinimum Value</td> 					     <td style="text-align:center">&nbsp1</td>          <td style="text-align:center">&nbsp1</td>           <td style="text-align:center">&nbsp1</td>		 <td style="text-align:center">&nbsp0</td>       					                 
+			</tr> 
+			
+			
+			
+			<tr>		
+					<td height="25" style="text-align:center">&nbspENOB (INL,DNL<0.5 LSB)</td> 					     <td style="text-align:center">&nbsp8</td>          <td style="text-align:center">&nbsp8</td>           <td style="text-align:center">&nbsp8</td>		 <td style="text-align:center">&nbsp8</td>       					                 
+			</tr> 
+			
+			
+			</table>
+			
+			
+			</td>
+			
+		</tr>
+
+
+</table>
+
+	
+	
+
+
+      <div class="handout">
+        <!-- hand out -->
+      </div>
+    </div>
+
+
+
+<!----------------------------------------- Next slide -------------------------------->
+	  
+	  
+	  <div class="slide">
+      <h1> Interpretation of Results of ADC Characterization</h1>
+	  <table style="width:50%">
+	  <tr>
+	  <td>
+	  
+      <ul>
+	  <li><p style="text-align:justify; color:black;">The results and graphs of the ADC characterization (PMOD DAC and Arduino ADC) can be seen in the previous slide.</p></li>
+	  
+      <li><p style="text-align:justify; color:black;"> For the ADC Characterization, I used the PMOD DAC with Arduino ADC which is 10 bit in our case. I used two 
+			ADCs of Arduino which are OSC2 and OSC4.</p></li>
+			
+		<li><p style="text-align:justify; color:black;">There is a negligible difference between the outputs of both the ADCs of the arduino. For the Ramp test, 
+				the difference between the INL, DNL value is 0.01 LSB.</p></li>
+				
+		<li><p style="text-align:justify; color:black;"> For the Ramp test, I supposed the number of occurences to be 4 and it again matches with the results that were calculated using the
+			excel sheet.</p></li>		
+			
+		<li> <p style="text-align:justify; color:black;">The FFT spectrum helps to identify the number of periods and the SQNR as well. The SQNR eventually helps to find the ENOB
+				using the formula ENOB = (SQNR-1.76) / 6.02.</p></li>	
+			
+		<li><p style="text-align:justify; color:black;"> For both (OSC2 and OSC4), with different periods (1 and 11), the INL, DNL value becomes less than 0.5 LSB with zero missing codes after reducing the bits to 8.
+		</p></li>
+		
+		<li><p style="text-align:justify; color:black;">No SQNR difference has been observed after changing the number of periods for the sketch 3 of arduino. This happens because of no jitter 
+			effect after changing the frequency.</p></li>
+			
+		<li><p style="text-align:justify; color:black;">Here, the number of periods are prime and integer as well. The integer number of periods help to get a true spectrum of our original signal by 
+				removing the discontinuities. The prime number of periods help to compute the DFT through FFT with less computational time. </p></li>	
+			
+		<li><p style="text-align:justify; color:black;"> It has been observed that for both the OSC2 and OSC4 with 11 number of periods the  INL, DNL is less than what it was for 1 period. </p></li>
+		
+		 <li><p style="text-align:justify; color:black;">I tried to use the given windows to improve my spectrum, but everything went against the expectations because the windowing 
+				decreased the ENOB.</p></li>	
+		
+      </ul>
+	  
+	  </td>
+	  </tr>
+	  </table>
+
+
+
+<!----------------------------------------- Next slide -------------------------------->
+    <div class="slide">
+      <h1>Optimization of Arduino Code</h1>
+	  <table style="width:50%">
+	  <tr>
+	  <td>
+      <ul>
+	  <li><p style="text-align:justify; color:black;">I did not implement the optimized code for ADC due to time restrictions. But, I am going to propose how we can do that.</p></li>
+	  
+       <li><p style="text-align:justify; color:black;">From the technical specification sheet of the Arduino MKR Wifi 1010, we can confirm that the ADC of the 
+			Arduino can have 8,10 or 12 bits.</p></li>
+		
+		<li><p style="text-align:justify; color:black;">In our last arduino sketch, we are using the 10 bit ADC. This can be increased by using the analogReadResolution(12). </p></li>
+		
+		<li><p style="text-align:justify; color:black;">Thus, we can increase the number of codes from 1024 to 4096 without using the external PMOD ADC.</p></li>
+			
+		<li><p style="text-align:justify; color:black;">However, the DAC resolution is limited to 10 bits for Arduino MKR Wifi 1010 as specified in the technical 
+				specification sheet [2].</p></li>
+      </ul>
+	  </td>
+	  </tr>
+	  </table>
+
+
+
+
+<div class="slide">
+      <h1>Challenges</h1>
+	  <table style="width:50%">
+	  <tr>
+	  <td>
+      <ul>
+	  <li><p style="text-align:justify; color:black;">Th first challenge I faced was doing the Sine test for the DAC characterization using the excel sheet.
+			I was not able to get an ideal sine because the adjustments I had to make for the Gain and Offset errors.
+				For that reason, I used the FFT tool provided on the course webpage.</p></li>
+				
+		<li><p style="text-align:justify; color:black;">By using long wires for my connections in the breadboard, the chances of cross-talk, parasitics,
+				all sorts of undesirable behaviour increased. For that reason , I observed more noise in the spectrum.</p></li>
+				
+		<li><p style="text-align:justify; color:black;">By using two measuring devices at the same time, the values of INL, DNL got increased but not that much. For
+				example, for ADC characterization, I used the arduino ADC with PMOD DAC. But for this test, I used the PMOD ADC as 
+					a measuring device in parallel as well. That resulted in an increased value of INL, DNL. 
+						The issue got resolved by removing the unnecessary measuring devices.</p></li>		
+       
+		<li><p style="text-align:justify; color:black;">I had a large number of graphs and in order to make my report presentable enough, I added buttons to make it easy for the reviewer to understand 
+				everyhting without any confusion. I spent a lot of time on adding those buttons because after making a code for a single button, I got stuck 
+					when I tried to implement a number of buttons in the same webpage. I solved that issue by making a single script for all the buttons	
+						and using the class "button-image-btn".</p></li>
+						
+		<li><p style="text-align:justify; color:black;">The windowing option available in the FFT tool worked against my expectations because it decreased the effective number of bits after the windowing. 
+				Ideally, it should decrease the noise and should help to acheive greater number of bits. Furthermore, in the FFT tool, there is an option for 
+						Kaiser Window, but in the source code it is using the blackmann Window  ( Source Code: cWin = blackman(gr, 2)). According to my understanding , 
+								Blackmann window is ideal for ADC characterization.</p></li>				
+	   
+      </ul>
+	   </td>
+	  </tr>
+	  </table>
+	  
+	  <!----------------------------------------- Next slide -------------------------------->
+
+
+
+<div class="slide">
+      <h1>Summary and Conclusions</h1>
+	  
+	  <table style="width:50%">
+	  <tr>
+	  <td>
+      <ul>
+	  
+	  <li><p style="text-align:justify; color:black;">The measuring device should have greater number of bits than the number of bits of the device under test.</p></li>
+	  
+	  <li><p style="text-align:justify; color:black;">For the DAC characterization, we used a ADC (PMOD) with greater number of bits (12) than the bits (10/8) of DACs (Arduino/R2R).</p></li>
+	  
+	  <li><p style="text-align:justify; color:black;">For the ADC characterization, we used a DAC (PMOD) with greater number of bits (12) than the bits (10) of a ADC (Arduino).</p></li>
+        
+	  <li><p style="text-align:justify; color:black;">The less compact circuit of an R2R DAC has more errors (INL, DNL = -1.02 LSB for DAC Ramp Test) as compare to Arduino DAC  because it is a bread board patched circuit 
+			which is made by using resistors.</p></li>
+
+	  <li><p style="text-align:justify; color:black;">We have to compromise our ENOB in order to keep our INL, DNL value less than 0.5 LSB.</p></li>
+	  
+	  <li><p style="text-align:justify; color:black;">By doing the spectral analysis, we can examine our signal and can figure out the number of periods, SQNR and ENOB.</p></li>
+	  
+	  <li><p style="text-align:justify; color:black;">Having Integer number of periods can help to remove the discontinuities in order to get an actual spectrum of our signal.</p></li>
+	  
+	  <li><p style="text-align:justify; color:black;">We can decrease the computational time, by choosing prime number of periods of our signal like 1,11,101,1001 periods.</p></li>
+	  
+	  <li><p style="text-align:justify; color:black;">Even for a same converter, we can have a bit different results like data from OSC2 and OSC4 were different.</p></li>
+	  
+	  <li><p style="text-align:justify; color:black;">By changing the number of periods, there will be some jitter effect due to the deviation from true periodicity of a presumably periodic signal</p></li>
+	  
+	  <li><p style="text-align:justify; color:black;">It is better to find the number of occurences using the excel sheet for the Ramp test as we get the actual number of occurences.</p></li>
+	  
+	   <li><p style="text-align:justify; color:black;">Last but not the least, this laboratory helped me a lot to improve my HTML programming skills 
+				and increased my confidence to pursue a career in programming.</p></li>
+				
+		 <li><p style="text-align:justify; color:black;">I spent 70% of the time on technical aspect of this laboratory and remaining 30% on the webreport compilation.</p></li>		
+      </ul>
+	   </td>
+	  </tr>
+	  </table>
+	  
+	  
+	  <!----------------------------------------- Next slide -------------------------------->
+
+
+
+    <!----------------------------------------- Next slide -------------------------------->
+    <div class="slide">
+      <h1>References</h1>
+      <br>
+      [1] <a href="https://personalpages.hs-kempten.de/~vollratj/InEl/2017_09_30_99_InEl_Web_Report.html" class="blue">
+        Making of a Webreport </a>, Vollrath <br>
+		<br>
+	  [2] <a href="https://store.arduino.cc/arduino-mkr-wifi-1010" class="blue">
+          Arduino MKR Wifi 1010 </a> <br>	
+		<br>	
+	  [3] <a href="https://personalpages.hs-kempten.de/~vollratj/Projekte/ArduinoMKRWIFI1010.html" class="blue">
+        Laboratory 4: Setting up the Arduino MKR WIFI 1010 </a>, Vollrath <br>		
+      <br>
+      <br>
+      <div class="handout">
+        <!-- hand out -->
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footx" style="background-color:#0067a5;color:#FFFFFF; display:none">
+    <br>
+    &nbsp; Hochschule f&uuml;r angewandte Wissenschaften Kempten, J&ouml;rg Vollrath, Bahnhofstra&szlig;e 61 &middot;
+    87435 Kempten<br>
+    &nbsp; Tel. 0831/25 23-0 &middot; Fax 0831/25 23-104 &middot; E-Mail: joerg.vollrath(at)fh-kempten.de <br>
+    <a href="http://www.hochschule-kempten.de/metanavigation/impressum.html">
+      <div style="background-color:#0067a5;color:#FFFFFF"> Impressum </div>
+    </a>
+  </div>
+
+  <script type="text/javascript">
+  // < !--Begin
+    //--------------------------------------------------
+    function toggle(name) {
+      var obj1 = document.getElementById(name)
+      if (obj1.style.display == 'block') {
+        obj1.style.display = 'none';
+      } else {
+        obj1.style.display = 'block';
+      }
+    }
+    //--------------------------------------------------
+
+    function myQR() {
+      var qr = new JSQR();							// Initialize a new JSQR object.
+      var code = new qr.Code();						// Initialize a new Code object.
+
+      code.encodeMode = code.ENCODE_MODE.BYTE;			// Set the code datatype.
+      code.version = code.DEFAULT;						// Set the code version
+      // (DEFAULT = use the smallest possible version).
+      code.errorCorrection = code.ERROR_CORRECTION.H;		// Set the error correction level (H = High).
+
+      var input = new qr.Input();						// Initialize a new Input object.
+      input.dataType = input.DATA_TYPE.TEXT;			 	// Specify the data type of 'data'.
+      // Here, 'data' contains only text.
+      var stX = window.location.pathname;					// Specify the data which should be encoded.
+
+      // alert(stX);
+      if (stX.substr(0, 3) == "/D:") {  // File name local transfer to https
+        stX = "https://personalpages.hs-kempten.de/~vollratj/"
+          + stX.substr(27, stX.length - 27);
+        // alert(stX);
+      }
+      input.data = stX
+
+      var matrix = new qr.Matrix(input, code);			// Initialize a new Matrix object using the input
+      // and code, defined above.
+      // At this point, the QR Code get generated.
+
+      matrix.scale = 4;								// Specify the scaling for graphic output.
+      matrix.margin = 2;								// Specify the margin for graphic output.
+
+      var canvas = document.getElementById('thisQR');		// Create a new Canvas element.
+      canvas.setAttribute('width', matrix.pixelWidth);		// Set the canvas width to the size of the QR code.
+      canvas.setAttribute('height', matrix.pixelWidth);		// Set the canvas height to the size of the QR code.
+      canvas.getContext('2d').fillStyle = 'rgb(0,0,0)';		// Set the foreground color of the canvas to black.
+      matrix.draw(canvas, 0, 0);						// Draw the QR code into the canvas
+      // at position 0 (left), 0 (top).
+    };
+
+    add_chart(myQR);
+
+    document.addEventListener("load", prettyPrint());
+    document.addEventListener("load", findLT());
+
+  //  End -->
+  </script>
+
+</body>
+
+</html>
